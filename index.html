@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>h5_zozo</title>
+  <style>
+  
+  </style>
+  <!-- <script src="static/js/veryless.js"></script> -->
+ <!-- 开发环境 -->
+ <% if (process.env.NODE_ENV === 'development') { %>
+  <script>
+    ;(function () {
+      window.SITE_CONFIG = {};
+      window.SITE_CONFIG['apiURL'] = `${process.env.API}`;
+      // window.SITE_CONFIG['apiURL'] = "http://106.2.12.191:9080"
+      // window.SITE_CONFIG['apiURL'] = " https://api.zozo.cn/"
+      window.SITE_CONFIG['imgURL'] = 'http://47.103.97.147';
+    })();
+  </script>
+  <% } %>
+
+
+   <!-- sit -->
+   <% if (process.env.NODE_ENV === 'productionsit') { %>
+    <script>
+      ;(function () {
+        window.SITE_CONFIG = {};
+        window.SITE_CONFIG['apiURL'] = "http://39.105.85.180:8080"
+        // window.SITE_CONFIG['apiURL'] = "http://rrmc.kviuff.com:8080"
+        window.SITE_CONFIG['imgURL'] = 'http://47.103.97.147';
+        // window.SITE_CONFIG['apiURL'] = "https://api.zozo.cn";
+        // window.SITE_CONFIG['imgURL'] = 'http://oss-cn-beijing.speedycloud.org';
+        //http://oss-cn-beijing.speedycloud.org/zozoimage/1182109791890227200.png
+      })();
+    </script>
+    <% } %>
+
+     <!-- uat -->
+  <% if (process.env.NODE_ENV === 'productionuat') { %>
+    <script>
+      ;(function () {
+        window.SITE_CONFIG = {};
+        window.SITE_CONFIG['apiURL'] = "http://39.105.85.180:8080"
+        // window.SITE_CONFIG['apiURL'] = "http://rrmc.kviuff.com:8080"
+        window.SITE_CONFIG['imgURL'] = 'http://47.103.208.123';
+        // window.SITE_CONFIG['apiURL'] = "https://api.zozo.cn";
+        // window.SITE_CONFIG['imgURL'] = 'http://oss-cn-beijing.speedycloud.org';
+        //http://oss-cn-beijing.speedycloud.org/zozoimage/1182109791890227200.png
+      })();
+    </script>
+    <% } %>
+
+    
+  <!-- 生产环境 -->
+  <% if (process.env.NODE_ENV === 'production') { %>
+    <script>
+      ;(function () {
+        window.SITE_CONFIG = {};
+        window.SITE_CONFIG['apiURL'] = "http://39.105.85.180:8080"
+        // window.SITE_CONFIG['apiURL'] = "http://rrmc.kviuff.com:8080"
+        window.SITE_CONFIG['imgURL'] = 'http://47.103.208.123';
+        // window.SITE_CONFIG['apiURL'] = "https://api.zozo.cn";
+        // window.SITE_CONFIG['imgURL'] = 'http://oss-cn-beijing.speedycloud.org';
+        //http://oss-cn-beijing.speedycloud.org/zozoimage/1182109791890227200.png
+      })();
+    </script>
+    <% } %>
+</head>
+<body>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>
+<style>
+  html,body,#app{
+    height: 100%;
+  }
+  *{
+    margin:0;
+    padding: 0;
+  }
+  #app {
+    margin-top: 0;
+  }
+</style>
