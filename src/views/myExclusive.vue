@@ -13,8 +13,11 @@
             </div>
         </div>  -->
          <!-- <img  src="static/img/canvasWarp.png" alt=""> -->
-         <canvas id="myCanvas" width="750" height="1334"></canvas>
-         <div id="qrCode" ref="qrCodeDiv"></div>
+        <div>
+             <canvas id="myCanvas" width="750" height="1334"></canvas>
+              <div id="qrCode" ref="qrCodeDiv"></div>
+        </div>
+        <img id="endimg"  v-if="endimg" :src="endimg"   alt="" style=" z-index:1000;position: absolute;top: 0;left: 0;width:;100%;height:100%;">
 
   </div>
 </template>
@@ -27,6 +30,7 @@ export default {
     name: "HelloWorld",
     data() {
         return {
+            endimg:"",
         }
     },
     created(){
@@ -45,9 +49,9 @@ export default {
     methods:{
          // 生成二维码
         makeQrcode() {
-            var url = "http://xxxxx.com/f/member/api/code/777777777"
+            // var url = "http://xxxxx.com/f/member/api/code/777777777"
             new QRCode(this.$refs.qrCodeDiv, {
-                text: 'https://www.baidu.com',
+                text: this.$route.query.id,
                 width: 200,
                 height: 200,
                 colorDark: "#333333", //二维码颜色
@@ -106,7 +110,8 @@ export default {
         // base64上传图片
         uploadImg(base64){
             var obj = {
-                pictureBase64:base64
+                pictureBase64:base64,
+                memberId:this.$route.query.id
             }
             // 自定义加载图标
             Toast.loading({
@@ -118,6 +123,7 @@ export default {
             saveImage(obj).then((res)=>{
                 Toast.clear();
                 if(res.result=="true"){
+                    this.endimg = res.data.imagePath
                     Toast.success(res.message);
                 }else{
                     TToast.success(res.message);
@@ -139,6 +145,7 @@ export default {
     height: 100%;;
     /* background-color:#000000;  */
     color: #ffffff;
+    overflow: hidden;
 }
 .myExclusive .bgimg{
     /* position: absolute;

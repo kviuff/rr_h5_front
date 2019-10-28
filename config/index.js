@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: require('./dev.env').OPEN_PROXY ? {
       '/proxyApi': {
-     target: 'http://39.105.85.180:8080',   //正式
+     target: 'http://rrmc.kviuff.com',   //正式
 				// target: 'http://rrmc.kviuff.com:8080',
         // target: "https://api.zozo.cn",
         changeOrigin: true,

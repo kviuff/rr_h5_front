@@ -16,7 +16,7 @@
             </div>
             <div  class="registItem">
                 <p>手机号码</p>
-                 <input type="text"  v-model="mmobile" placeholder="请填写您的手机号码" >
+                 <input type="text"  v-model="mmobile" maxlength="11" placeholder="请填写您的手机号码" >
             </div>
             <div  class="registItem">
                 <p>预约观展日期</p>
@@ -84,30 +84,30 @@ export default {
     methods:{
         // 去注册
         goMyExclusive(){
-            // if(!this.mtitle){
-            //     Toast.fail('请选择称谓');
-            //      return;
-            // }
-            // if(!this.mname){
-            //      Toast.fail('请填写姓名');
-            //      return;
-            // }
-            // if(!this.mmobile){
-            //      Toast.fail('请填写正确的手机号');
-            //      return;
-            // }
-            // if(!this.mdate){
-            //      Toast.fail('请选择预约观展日期');
-            //     return;
-            // }
-            // if(!this.checked){
-            //       Toast.fail('请同意以上内容');
-            //     return
-            // }
-            this.mtitle = "男"
-            this.mname = "bai4"
-            this.mmobile = "13244444446"
-            this.mdate = "2019-11-16 00:00:00"
+            if(!this.mtitle){
+                Toast.fail('请选择称谓');
+                 return;
+            }
+            if(!this.mname){
+                 Toast.fail('请填写姓名');
+                 return;
+            }
+            if(!this.mmobile &&  !/^1[0-9]{10}$/.test(this.mmobile)){
+                 Toast.fail('请填写正确的手机号');
+                 return;
+            }
+            if(!this.mdate){
+                 Toast.fail('请选择预约观展日期');
+                return;
+            }
+            if(!this.checked){
+              Toast.fail('请同意以上内容');
+                return
+            }
+            // this.mtitle = "男"
+            // this.mname = "bai4"
+            // this.mmobile = "13244169064"
+            // this.mdate = "2019-11-16 00:00:00"
             var obj = {
                 mtitle:this.mtitle,
                 mname:this.mname,
@@ -124,8 +124,6 @@ export default {
                 }else{
                     Toast.fail(res.message);
                 }
-
-               
             })
            
         }

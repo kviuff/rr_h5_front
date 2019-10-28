@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <router-link to="/video">开始</router-link>
+      <div style="text-align: center;padding-top:50%;font-size:1rem">
+        <router-link to="/video" >点击开始</router-link>
+      </div>
     <br>
   </div>
 </template>
