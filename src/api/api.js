@@ -1,7 +1,7 @@
 import http from '@/utils/request'
 import {getInformation} from '@/utils/index'
 
-let base = "";
+let base = "/admin";
 let requestType = { headers: { 'content-type': 'application/x-www-form-urlencoded' } };
 
 

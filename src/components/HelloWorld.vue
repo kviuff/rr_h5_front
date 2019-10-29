@@ -14,6 +14,11 @@ export default {
     return {
       msg: "Welcome to Your Vue.js App"
     };
+  },
+  created(){
+        this.$router.push({
+              path:"video"
+        })
   }
 };
 </script>

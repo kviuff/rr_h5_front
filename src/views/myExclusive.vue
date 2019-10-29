@@ -13,11 +13,9 @@
             </div>
         </div>  -->
          <!-- <img  src="static/img/canvasWarp.png" alt=""> -->
-        <div>
-             <canvas id="myCanvas" width="750" height="1334"></canvas>
-              <div id="qrCode" ref="qrCodeDiv"></div>
-        </div>
-        <img id="endimg"  v-if="endimg" :src="endimg"   alt="" style=" z-index:1000;position: absolute;top: 0;left: 0;width:;100%;height:100%;">
+        <canvas id="myCanvas" width="750" height="1334"></canvas>
+        <div id="qrCode" ref="qrCodeDiv"></div>
+        <img id="endimg" v-if="endimg" class="saveEndimg"  :src="endimg"   alt="">
 
   </div>
 </template>
@@ -100,6 +98,8 @@ export default {
                                 var strDataURI=c.toDataURL("image/png");    
                                 // console.log();
                                 that.uploadImg(strDataURI);
+                                // that.uploadImg(qrcodesrc);
+                                
                             }
                         },10)
                     })
@@ -124,7 +124,7 @@ export default {
                 Toast.clear();
                 if(res.result=="true"){
                     this.endimg = res.data.imagePath
-                    Toast.success(res.message);
+                    // Toast.success(res.message);
                 }else{
                     TToast.success(res.message);
                 }
@@ -180,5 +180,17 @@ export default {
 #myCanvas{
     width: 100%;
     height: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.saveEndimg{
+    z-index:1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    opacity: 0;
 }
 </style>

@@ -59,5 +59,15 @@ export default {
   background-color: black;
   font-family: 'Gill Alt One MT','SimHei','Microsoft YaHei','Hiragino Sans GB',sans-serif;
 }
-
+.van-toast{
+    width: 2.5rem;
+    min-height: 2.5rem;
+}
+.van-loading__spinner{
+    width: 1rem;
+    height: 1rem;
+}
+.van-toast__text {
+    margin-top: 0.2rem;
+}
 </style>

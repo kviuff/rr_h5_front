@@ -134,9 +134,16 @@ export default {
 /* (895/(1080/750))/75 */
 .registWarp{
     width: 100%;
-    height: 100%;;
-    background-color:#000000; 
+    height: 100%;
     color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    /* 
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background-color:#000000; 
+    background-color:red; */
 }
 .registWarp, .topImg{
     position: absolute;
@@ -146,8 +153,9 @@ export default {
  /* height: 9.89815rem; */
 }
 .registWarp .registInfo{
-    position: relative;
-    top:5.2037rem;
+    position: absolute;
+    bottom:1rem;
+    left: 0.55rem;
     padding-top: 0.8333rem;
     text-align: center;
     font-size: 0.3704rem;
@@ -203,6 +211,10 @@ input,select,.ulWarp{
 /deep/  .van-checkbox__icon .van-icon{
     border-color: #ffa70e !important;
 }
+/deep/ .van-checkbox__label{
+    height: 0.34rem;
+    line-height: 0.34rem;
+}
 
 .grayColor{
     color:#808080
@@ -236,6 +248,17 @@ input,select,.ulWarp{
     width: 1.148148rem;
     display: inline-flex;
     justify-content: space-between;
+}
+
+select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    border:none;
+    background: url("../../static/img/downarrow.png") no-repeat scroll right center transparent;
+    /* border: 10px solid #ccc; */
+    padding-left: 0.186667rem;
+    background-size: 0.3rem;
 }
 
 </style>

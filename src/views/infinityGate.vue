@@ -51,6 +51,8 @@ export default {
     height: 100%;;
     background-color:#000000; 
     color: #ffffff;
+     position: relative;
+    overflow: hidden;
 }
 .infinityGate,.topImg{
     position: absolute;
@@ -60,8 +62,9 @@ export default {
  /* height: 9.89815rem; */
 }
 .infinityGate .wordWarp{
-    position: relative;
-    top:7.5074rem;
+    position: absolute;
+    bottom:2rem;
+    width: 100%;
     text-align: center;
     font-size: 0.3704rem;
     /* height: 2.466rem; */
