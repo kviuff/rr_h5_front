@@ -2,6 +2,7 @@
   <div class="registWarp">
          <img class="topImg" src="static/img/bg2.jpg" alt="">
          <div class="registInfo" style="background-image:url('static/img/bg2_bg1.jpg');">
+            <div style="width:1rem;height:0.8333rem;"></div> 
             <div class="registItem">
                 <p>称谓</p>
                 <select class="select" v-model="mtitle" :class="mtitle==''?'grayColor':''">
@@ -49,10 +50,11 @@
                     </van-checkbox>
                 </div>
                 <div class="submitWarp">
-                    <van-button type="default" class="submmitbt" @click="goMyExclusive">
+                    <!-- <van-button type="default" class="submmitbt" @click="goMyExclusive">
                         <span>提</span>
                         <span>交</span>
-                    </van-button>
+                    </van-button> -->
+                    <img class="submmitbt" @click="goMyExclusive" src="static/img/submit.png" alt="">
                 </div>
             </div>
          </div>
@@ -92,7 +94,7 @@ export default {
                  Toast.fail('请填写姓名');
                  return;
             }
-            if(!this.mmobile &&  !/^1[0-9]{10}$/.test(this.mmobile)){
+            if(!/^1\d{10}$/.test(this.mmobile)){
                  Toast.fail('请填写正确的手机号');
                  return;
             }
@@ -156,14 +158,14 @@ export default {
     position: absolute;
     bottom:1rem;
     left: 0.55rem;
-    padding-top: 0.8333rem;
+    /* padding-top: 0.8333rem; */
     text-align: center;
     font-size: 0.3704rem;
     background: #000000;
     width:8.803703703rem;
     margin: auto;
-    background-size: cover;
-
+     background-size: 100%;
+    background-repeat: no-repeat;
 }
 .registItem{
     width: 7.46296rem;
@@ -240,9 +242,12 @@ input,select,.ulWarp{
 }
 .submmitbt{
     width: 3.407rem;
-    height: 0.5rem;
-    line-height: 0.4rem;
+    /* width: 1.7724rem; */
+    /* height: 0.5rem;
+    line-height: 0.4rem; */
+    height: auto;
     border-radius: 0.0926rem;
+   
 }
 .submmitbt .van-button__text{
     width: 1.148148rem;

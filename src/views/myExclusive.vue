@@ -37,7 +37,9 @@ export default {
     mounted() {
         
          if(this.$route.query.id){
-             this.drawCanvas();
+           this.$nextTick(()=>{
+                this.drawCanvas();
+           })
          }else{
             this.$router.replace({
                 path:"regist",
@@ -47,15 +49,27 @@ export default {
     methods:{
          // 生成二维码
         makeQrcode() {
+             document.getElementById('qrCode').innerHTML = ''
             // var url = "http://xxxxx.com/f/member/api/code/777777777"
-            new QRCode(this.$refs.qrCodeDiv, {
-                text: this.$route.query.id,
+            var id = this.$route.query.id
+            // var a = new QRCode(this.$refs.qrCodeDiv, {
+            //     text: id,
+            //     width: 200,
+            //     height: 200,
+            //     colorDark: "#333333", //二维码颜色
+            //     colorLight: "#ffffff", //二维码背景色
+            //     correctLevel: QRCode.CorrectLevel.L//容错率，L/M/H
+            // })
+            // alert(JSON.stringify(a));
+            //生成前景色为红色背景色为白色的二维码
+            jQuery('#qrCode').qrcode({
+                text: id,
+                render: "canvas", //也可以替换为table
+                foreground: "#333333",
+                background: "#ffffff",
                 width: 200,
                 height: 200,
-                colorDark: "#333333", //二维码颜色
-                colorLight: "#ffffff", //二维码背景色
-                correctLevel: QRCode.CorrectLevel.L//容错率，L/M/H
-            })
+            });
         },
         // canvas画图
         drawCanvas(){
@@ -90,18 +104,17 @@ export default {
                         setTimeout(()=>{
                             let qrcode = new Image ()
                             qrcode.crossOrigin = 'Anonymous'
-                            var qrcodesrc  = document.querySelector('#qrCode>img').src;
+                            var qrcodesrc  = document.querySelector('#qrCode canvas').toDataURL("image/png");
                             qrcode.src = qrcodesrc;
                             qrcode.onload = ()=>{
-                                ctx.drawImage(qrcode,0,0,200,200,309.72,1137.5,138.89,138.89)
+                                ctx.drawImage(qrcode,0,0,200,200,309.72,1137.5,141.89,141.89)
                                 // ctx.drawImage(img,0,0,100,100,100,100);
                                 var strDataURI=c.toDataURL("image/png");    
                                 // console.log();
                                 that.uploadImg(strDataURI);
                                 // that.uploadImg(qrcodesrc);
-                                
                             }
-                        },10)
+                        },500)
                     })
 
                 }
