@@ -80,22 +80,22 @@ export default {
       bgImg.crossOrigin = "Anonymous";
       bgImg.src = "static/img/bg3.jpg";
       bgImg.onload = () => {
-        ctx.drawImage(bgImg, 0, 0, 1080, 1920, 0, 0, 750, 1334);
+        ctx.drawImage(bgImg, 0, 0, 1080, 1990, 0, 0, 750, 1390);
         // 写字
         // ctx.font="30px  'Gill Alt One MT'";
         ctx.font = "30px Gill Alt One MT";
         ctx.fillStyle = "white";
-        ctx.fillText("您已经接受劳斯莱斯 BLACK BADGE", 137.5, 913.27);
-        ctx.fillText("黑暗觉醒 无限远征的召集，", 195.8333, 951.394);
-        ctx.fillText("请您携带好入场凭证， ", 229.16667, 993.05556);
-        ctx.fillText("与我们一同感受BLACK BADGE的神秘力量", 93.75, 1037.5);
+        ctx.fillText("您已经接受劳斯莱斯 BLACK BADGE", 137.5, 873.27);
+        ctx.fillText("黑暗觉醒 无限远征的召集，", 195.8333, 921.394);
+        ctx.fillText("请您携带好入场凭证， ", 229.16667, 963.05556);
+        ctx.fillText("与我们一同感受BLACK BADGE的神秘力量", 93.75, 1007.5);
 
         // 二维码外边框
         let qrcodeOut = new Image();
         qrcodeOut.crossOrigin = "Anonymous";
         qrcodeOut.src = "static/img/1572450050201.jpg";
         qrcodeOut.onload = () => {
-          ctx.drawImage(qrcodeOut, 0, 0, 234, 214, 265.72, 1106.5, 220, 220);
+          ctx.drawImage(qrcodeOut, 0, 0, 234, 214, 265.72, 1070.5, 220, 220);
           // 画二维码
           this.$nextTick(() => {
             this.makeQrcode();
@@ -114,7 +114,7 @@ export default {
                   200,
                   200,
                   275.72,
-                  1117.5,
+                  1080.5,
                   200.89,
                   200.89
                 );

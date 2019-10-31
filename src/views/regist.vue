@@ -162,7 +162,7 @@ export default {
   left: 0.55rem;
   /* padding-top: 0.8333rem; */
   text-align: center;
-  font-size: 0.3704rem;
+  /* font-size: 0.3704rem; */
   background: #000000;
   width: 8.803703703rem;
   margin: auto;
