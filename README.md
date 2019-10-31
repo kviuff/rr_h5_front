@@ -9,9 +9,11 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  npm install
+2.  cnpm i lib-flexible --save
+3.  cnpm install px2rem-loader
+4.  npm  run dev
+5.  npm run-script build
 
 #### 使用说明
 
