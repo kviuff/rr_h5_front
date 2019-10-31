@@ -1,6 +1,10 @@
 <template>
   <div class="registWarp">
     <img class="topImg" src="static/img/bg2.jpg" alt />
+    <div class="logoimgWarp">
+      <img class="logoimg" src="static/img/logo.png" alt style />
+    </div>
+
     <div class="registInfo" style="background-image:url('static/img/bg2_bg1.jpg');">
       <div style="width:1rem;height:0.8333rem;"></div>
       <div class="registItem">
@@ -30,7 +34,7 @@
       </div>
       <div class="bottomWarp">
         <ul class="ulWarp" style="list-style-type:disc">
-          <li>2019 劳斯莱斯BLACK BADGE品牌展参观券可在活 动期间内的任何时段使用，过期无效。</li>
+          <li>2019 劳斯莱斯BLACK BADGE品牌展参观券可在活动期间内的任何时段使用，过期无效。</li>
           <li>本券为2019 劳斯莱斯BLACK BADGE品牌展唯一入场凭证，仅限本人使用，不可擅自转让或租借他人。</li>
           <li>
             个人信息仅作为本次活动入场确认使用。
@@ -156,13 +160,26 @@ export default {
   width: 100%;
   /* height: 9.89815rem; */
 }
+
+.logoimgWarp {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  width: 100%;
+}
+.logoimgWarp .logoimg {
+  width: 8.16759rem;
+  height: auto;
+  margin-top: 1rem;
+}
 .registWarp .registInfo {
   position: absolute;
   bottom: 1rem;
   left: 0.55rem;
   /* padding-top: 0.8333rem; */
   text-align: center;
-  /* font-size: 0.3704rem; */
+  font-size: 0.3704rem;
   background: #000000;
   width: 8.803703703rem;
   margin: auto;
