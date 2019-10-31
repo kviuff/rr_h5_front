@@ -1,15 +1,17 @@
 <template>
   <div class="registWarp">
-    <img class="topImg" src="static/img/bg2.jpg" alt />
-    <div class="logoimgWarp">
-      <img class="logoimg" src="static/img/logo.png" alt style />
-    </div>
+    <img class="topImg" src="static/img/bg_all.jpg" alt style="z-index: 999" />
 
-    <div class="registInfo" style="background-image:url('static/img/bg2_bg1.jpg');">
+    <div class="registInfo">
       <div style="width:1rem;height:0.8333rem;"></div>
       <div class="registItem">
         <p>称谓</p>
-        <select class="select" v-model="mtitle" :class="mtitle==''?'grayColor':''">
+        <select
+          style="margin-left:-0.2rem"
+          class="select"
+          v-model="mtitle"
+          :class="mtitle==''?'grayColor':''"
+        >
           <option value disabled selected style="display:none;">请选择您的称谓</option>
           <option value="男">男士</option>
           <option value="女">女士</option>
@@ -17,15 +19,26 @@
       </div>
       <div class="registItem">
         <p>姓名</p>
-        <input type="text" v-model="mname" placeholder="请填写您的姓名" />
+        <input style="margin-left:0rem" type="text" v-model="mname" placeholder="请填写您的姓名" />
       </div>
       <div class="registItem">
         <p>手机号码</p>
-        <input type="text" v-model="mmobile" maxlength="11" placeholder="请填写您的手机号码" />
+        <input
+          style="margin-left:0rem"
+          type="text"
+          v-model="mmobile"
+          maxlength="11"
+          placeholder="请填写您的手机号码"
+        />
       </div>
       <div class="registItem">
         <p>预约观展日期</p>
-        <select class="select" v-model="mdate" :class="mdate==''?'grayColor':''">
+        <select
+          style="margin-left:-0.2rem"
+          class="select"
+          v-model="mdate"
+          :class="mdate==''?'grayColor':''"
+        >
           <option value disabled selected style="display:none;">请选择您的预约观展日期</option>
           <option value="2019-11-16 00:00:00">2019年11月16日</option>
           <option value="2019-11-17 00:00:00">2019年11月17日</option>
@@ -43,15 +56,6 @@
         </ul>
 
         <div class="checkboxWarp">
-          <!-- <van-checkbox v-model="checked">
-                        <img
-                            style="width:0.463rem;height:0.463rem"
-                            slot="icon"
-                            slot-scope="props"
-                            :src="props.checked ? activeIcon : inactiveIcon"
-                        >
-
-          </van-checkbox>-->
           <van-checkbox v-model="checked" shape="square" checked-color="#ffa70e">
             <label style="color:#808080;margin-left:0.278rem;">我已阅读并同意以上内容</label>
           </van-checkbox>
@@ -144,7 +148,7 @@ export default {
   height: 100%;
   color: #ffffff;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   /*
     position: absolute;
     bottom: 0;
@@ -171,20 +175,21 @@ export default {
 .logoimgWarp .logoimg {
   width: 8.16759rem;
   height: auto;
-  margin-top: 1rem;
+  margin-top: 6rem;
 }
 .registWarp .registInfo {
   position: absolute;
-  bottom: 1rem;
-  left: 0.55rem;
+  top: 7rem;
+  left: 1rem;
   /* padding-top: 0.8333rem; */
   text-align: center;
   font-size: 0.3704rem;
   background: #000000;
-  width: 8.803703703rem;
+  width: 7.803703703rem;
   margin: auto;
   background-size: 100%;
   background-repeat: no-repeat;
+  z-index: 999;
 }
 .registItem {
   width: 7.46296rem;
@@ -205,6 +210,7 @@ export default {
   /* background: black;
     width: 98%;
     margin-left: 1%; */
+  margin-left: 0.5rem;
 }
 input,
 select {
@@ -226,6 +232,7 @@ select,
 .checkboxWarp {
   width: 7.1388rem;
   margin: auto;
+  margin-left: -0.3rem;
 }
 /deep/ .van-checkbox__icon {
   height: auto !important;
@@ -244,7 +251,7 @@ select,
 }
 
 .ulWarp {
-  height: 1.94444rem;
+  height: 2.2rem;
   text-align: left;
   margin-top: 0.462962rem;
 }
@@ -284,5 +291,6 @@ select {
   /* border: 10px solid #ccc; */
   padding-left: 0.186667rem;
   background-size: 0.3rem;
+  margin-left: 0.133rem;
 }
 </style>
